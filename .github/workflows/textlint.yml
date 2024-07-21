@@ -33,6 +33,7 @@ jobs:
       - name: Run textlint (avoiding error)
         run: |
           for file in ${{ steps.filter-files.outputs.filtered_files }}; do
+            echo $file
             npx textlint $file -o ./.textlint.log | true
           done
         shell: bash {0}
