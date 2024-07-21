@@ -23,8 +23,18 @@ jobs:
           cache: 'npm'
       - name: Install packages via packages.json
         run: npm install
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
+      - name: Filter changed files in src directory
+        id: filter-files
+        run: |
+          echo "##[set-output name=filtered_files;]$(echo "${{ steps.changed-files.outputs.all_changed_files }}" | tr ' ' '\n' | grep '^docs/ja' | tr '\n' ' ')"
       - name: Run textlint (avoiding error)
-        run: npx textlint **/*.md -o ./.textlint.log | true
+        run: |
+          for file in ${{ steps.filter-files.outputs.filtered_files }}; do
+            npx textlint $file -o ./.textlint.log | true
+          done
         shell: bash {0}
       - name: Report if textlint finds problems
         run: |
