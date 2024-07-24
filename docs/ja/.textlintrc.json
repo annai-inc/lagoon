@@ -1,0 +1,28 @@
+{
+  "plugins": {},
+  "filters": {},
+  "rules": {
+    "@textlint-ja/no-synonyms": true,
+    "@textlint-rule/no-unmatched-pair": true,
+    "alive-link": true,
+    "aws-service-name": true,
+    "ja-hiragana-daimeishi": true,
+    "ja-hiragana-fukushi": true,
+    "ja-hiragana-hojodoushi": true,
+    "ja-hiragana-keishikimeishi": true,
+    "ja-no-abusage": true,
+    "ja-no-redundant-expression": true,
+    "ja-no-weak-phrase": true,
+    "max-number-of-lines": true,
+    "max-ten": true,
+    "no-double-negative-ja": true,
+    "no-doubled-conjunctive-particle-ga": true,
+    "no-doubled-joshi": true,
+    "no-dropping-the-ra": true,
+    "no-mix-dearu-desumasu": true,
+    "no-mixed-zenkaku-and-hankaku-alphabet": true,
+    "no-nfd": true,
+    "no-start-duplicated-conjunction": true,
+    "preset-ja-spacing": true
+  }
+}
