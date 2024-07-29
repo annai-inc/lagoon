@@ -2,8 +2,8 @@
 
 LaravelをLagoonで実行するには、複数の方法があります。
 
-* 既存のアプリケーションを自分で「lagoonize」することができます（[Lagoonizing](../lagoonizing/index.md)のドキュメントを参照してください）。
-* 参考として、シンプルなlagoonizeされたLaravelインストールの例示リポジトリを用意しています。
+* 既存のアプリケーションをLagoon上で動かすためのセットアップができます（[Lagoonizing](../lagoonizing/index.md)のドキュメントを参照してください）。
+* 参考として、シンプルにLagoonで動かすためのセットアップがされたLaravelのサンプルリポジトリを用意しています。
 * （推奨） ["Sail:onLagoon"](../other-tools/sail.md)というツールを提供しています。これは標準的なLaravel Sailアプリケーションを取り、適切なLagoon設定ファイルを自動生成します。
 
 ## アプリケーション環境キー
