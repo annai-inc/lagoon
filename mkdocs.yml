@@ -281,7 +281,7 @@ plugins:
             Workflows: ワークフロー
             Feature Flags: フィーチャーフラグ
             Lagoonizing: Lagoonizing
-            Lagoonizing Your Existing Site: 既存サイトのLagoonizing
+            Lagoonizing Your Existing Site: 既存のサイトをLagoonizingする
             Docker Images: Dockerイメージ
             Configuring Applications: アプリケーションの設定
             Options: オプション
