@@ -665,7 +665,7 @@
             
   
   <span class="md-ellipsis">
-    高度なLagoonの概念
+    Lagoonの高度な概念
   </span>
   
 
@@ -675,7 +675,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            高度なLagoonの概念
+            Lagoonの高度な概念
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -886,7 +886,7 @@
             
   
   <span class="md-ellipsis">
-    Lagoon化
+    Lagoonizing
   </span>
   
 
@@ -896,7 +896,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Lagoon化
+            Lagoonizing
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2436,7 +2436,7 @@
         
   
   <span class="md-ellipsis">
-    アクティブ/スタンバイ
+    Active/Standby
   </span>
   
 
@@ -4742,17 +4742,17 @@
 <h2 id="_2">カスタムタスクの定義<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>タスクを定義する際には、いくつかのことを決定する必要があります。</p>
 <h3 id="_3">どのタスクを実行しますか？<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
-<p>ほとんどの場合、実行するカスタムタスクは、アプリケーションのコンテナの一つでシェルで実行されるものです。</p>
-<p>例えば、Node.jsアプリケーションでは、<code>node</code>コンテナで<code>yarn audit</code>を実行することに興味があるかもしれません。この場合、コマンドは単純に<code>yarn audit</code>となります。</p>
+<p>ほとんどの場合、実行するカスタムタスクは、アプリケーションのコンテナの一つでシェルから実行されるものです。</p>
+<p>例えば、Node.jsアプリケーションでは、<code>node</code>コンテナで<code>yarn audit</code>を実行することに興味があるかもしれません。この場合コマンドは単純に<code>yarn audit</code>となります。</p>
 <h3 id="_4">このタスクはどこで実行されますか？<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
-<p>このタスクがどこで実行されるかを定義する必要があります -- これは二つのことを意味します。まず、どのプロジェクトまたは環境でタスクを実行するか、そして、どのサービスで行うかです。</p>
-<p>たとえば、<code>yarn audit</code>タスクを特定のプロジェクト(この例ではプロジェクトのIDを42としましょう)の任意の環境で実行可能にしたいと考えているとしましょう。そのため、タスク定義を作成する際には、下記で説明するように、プロジェクトのIDを指定します。</p>
-<p>2つ目の質問は、どの環境をタスクの対象とするかということです。あなたが設定するときに あなたのプロジェクトを設定する際に、<a href="../../concepts-basics/docker-compose-yml/"><code>docker-compose.yml</code></a>でいくつかのサービスを指定します。このサービス名を使用して、コマンドが実際にどこで実行されるかを決定します。</p>
+<p>このタスクがどこで実行されるかを定義する必要があります。これは二つのことを意味します。まず、どのプロジェクトまたは環境でタスクを実行するか、そしてどのサービスで行うかです。</p>
+<p>たとえば、<code>yarn audit</code>タスクを特定のプロジェクト(この例ではプロジェクトのIDを42としましょう)の任意の環境で実行可能にしたいと考えているとしましょう。タスク定義を作成する際には、下記で説明するように、プロジェクトのIDを指定します。</p>
+<p>2つ目の質問は、どの環境をタスクの対象とするかということです。プロジェクトを設定する際に<a href="../../concepts-basics/docker-compose-yml/"><code>docker-compose.yml</code></a>でいくつかのサービスを指定します。このサービス名を使用してコマンドが実際にどこで実行されるかを決定します。</p>
 <h3 id="_5">このタスクを実行できるのは誰ですか？<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
-<p>タスクシステムへのアクセス権はプロジェクトロールに対応した3つのレベルがあります。ゲスト、デベロッパー、メンテナー -- 最も制限的なものから最も制限の少ないものまで、各ロールはそれより下のロールで定義されたタスクを呼び出すことができます(デベロッパーはゲストのタスクを見ることができ、メンテナーはすべてのタスクを見ることができます)。</p>
+<p>タスクシステムへのアクセス権はプロジェクトロールに対応した3つのレベルがあります。ゲスト、デベロッパー、メンテナーです。最も制限的なものから最も制限の少ないものまで、各ロールはそれより下のロールで定義されたタスクを呼び出すことができます(デベロッパーはゲストのタスクを見ることができ、メンテナーはすべてのタスクを見ることができます)。</p>
 <h2 id="_6">タスクの定義<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
-<p>タスクは<code>addAdvancedTaskDefinition</code>ミューテーションを呼び出すことで定義されます。重要なことは、これは単にタスクを_定義するだけで、それを呼び出すわけではありません。それは単にそれを環境で実行可能にするだけです。</p>
-<p>概念的には、呼び出しは次のようになります。</p>
+<p>タスクは<code>addAdvancedTaskDefinition</code>ミューテーションを呼び出すことで定義されます。重要なことは、これは単にタスクを定義するだけで呼び出すわけではありません。単にそれを環境で実行可能にするだけです。</p>
+<p>概念的には呼び出しは次のようになります。</p>
 <div class="language-graphql highlight"><span class="filename">新しいタスクを定義する</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">mutation</span><span class="w"> </span><span class="nf">addAdvancedTask</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">addAdvancedTaskDefinition</span><span class="p">(</span><span class="n">input</span><span class="p">:{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="no">string</span><span class="p">,</span>
@@ -4765,87 +4765,87 @@
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">advancedTaskDefinitionArguments</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="p">{</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ENVIROMENT_VARIABLE_NAME&quot;</span><span class="p">,</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="n">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Friendly Name For &quot;</span><span class="n">Variable</span><span class="err">&quot;</span><span class="p">,</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="n">type</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">文字列</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">環境ソース名</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">自己を除く環境ソース名]</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="err">}</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="err">]</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="err">})</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="err">...</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">AdvancedTaskDefinitionImage</span><span class="w"> </span><span class="err">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="n">displayName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Friendly Name For Variable&quot;</span><span class="p">,</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="n">type</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="no">STRING</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="no">ENVIRONMENT_SOURCE_NAME</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="no">ENVIRONMENT_SOURCE_NAME_EXCLUDE_SELF</span><span class="p">]</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="p">...</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="nc">AdvancedTaskDefinitionImage</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="n">id</span>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="n">name</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">      </span><span class="n">description</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">      </span><span class="n">service</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="n">image</span>
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">      </span><span class="n">confirmationText</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="n">advancedTaskDefinitionArguments</span><span class="w"> </span><span class="err">{</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="n">advancedTaskDefinitionArguments</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="n">type</span>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="n">range</span>
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="n">name</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="n">displayName</span>
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">      </span><span class="err">...</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">      </span><span class="p">...</span>
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="err">}</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="err">...</span><span class="w"> </span><span class="no">on</span><span class="w"> </span><span class="no">AdvancedTaskDefinitionCommand</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="err">...</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">AdvancedTaskDefinitionCommand</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">      </span><span class="n">id</span>
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">      </span><span class="n">name</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">      </span><span class="n">description</span>
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">      </span><span class="n">service</span>
 </span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">      </span><span class="n">command</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">      </span><span class="n">advancedTaskDefinitionArguments</span><span class="w"> </span><span class="err">{</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">      </span><span class="n">advancedTaskDefinitionArguments</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">        </span><span class="n">type</span>
 </span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="n">range</span>
 </span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">        </span><span class="n">name</span>
 </span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">        </span><span class="n">displayName</span>
 </span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">      </span><span class="err">...</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">      </span><span class="p">...</span>
 </span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="err">}</span>
 </span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">  </span><span class="err">}</span>
 </span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="err">}</span>
 </span></code></pre></div>
-<p>フィールド<code>name</code>と<code>description</code>は直訳です。これらは主にUIで使用されるタスクの名前と説明です。</p>
-<p><code>type</code>フィールドについては説明が必要です - 現時点では、プラットフォーム管理者のみが<code>IMAGE</code>タイプのコマンドを定義できます - これは、既存のサービスを対象にするのではなく、特定のタスクイメージをタスクとして実行することを可能にします。しかし、ほとんどのタスクは<code>COMMAND</code>タイプになります。</p>
-<p><code>[project|environment]</code>フィールドのセットは、タスクを<code>project</code>または<code>environment</code>に関連付ける(使用するキーによります)ことで、その値が id. 私たちが<code>yarn audit</code>のために考えているケースでは、IDが<code>42</code>の<code>project</code>を対象としていることを明示します。</p>
+<p>フィールド<code>name</code>と<code>description</code>は簡単です。これらは主にUIで使用されるタスクの名前と説明です。</p>
+<p><code>type</code>フィールドについては説明が必要です。現時点では、プラットフォームの管理者のみが<code>IMAGE</code>タイプのコマンドを定義できます。これは、既存のサービスを対象にするのではなく、特定のタスクイメージをタスクとして実行することを可能にします。しかし、ほとんどのタスクは<code>COMMAND</code>タイプです。</p>
+<p><code>[project|environment]</code>フィールドのセットは、タスクを<code>project</code>または<code>environment</code>に関連付ける(使用するキーによります)ことで、その値がidになります。 私たちが<code>yarn audit</code>のために考えているケースでは、IDが<code>42</code>の<code>project</code>を対象としていることを明示します。</p>
 <p>私たちがタスクでターゲットにしたいサービスを<code>service</code>フィールドに置き、<code>command</code>は私たちが実行したい実際のコマンドです。</p>
 <h3 id="_7">タスクに渡される引数<a class="headerlink" href="#_7" title="Permanent link">#</a></h3>
-<p>Lagoon UI経由でタスクを呼び出すユーザーにより柔軟性を提供するために、タスク引数の定義をサポートしています。これらの引数はテキストボックスまたはドロップダウンとして表示され、タスクを呼び出すために必要です。</p>
+<p>Lagoon UI経由でタスクを呼び出すユーザーに柔軟性を与えるために、タスク引数の定義をサポートしています。これらの引数はテキストボックスまたはドロップダウンとして表示され、タスクを呼び出すために必要です。</p>
 <p>以下は、2つの引数を設定する方法の例です。</p>
 <div class="language-graphql highlight"><span class="filename">タスク引数の定義</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="err">advancedTaskDefinitionArguments:</span><span class="w"> </span><span class="err">[</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">      </span><span class="p">{</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;</span><span class="n">ENV_VAR_NAME_SOURCE</span><span class="err">&quot;</span><span class="p">,</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;環境源&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;</span><span class="n">Environment</span><span class="w"> </span><span class="n">source</span><span class="err">&quot;</span><span class="p">,</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nl">type</span><span class="p">:</span><span class="w"> </span><span class="n">ENVIRONMENT_SOURCE_NAME</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="p">},</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="p">{</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;</span><span class="n">ENV_VAR_NAME_STRING</span><span class="err">&quot;</span><span class="p">,</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;エコー値&quot;</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nl">displayName</span><span class="p">:</span><span class="w"> </span><span class="err">&quot;</span><span class="n">Echo</span><span class="w"> </span><span class="n">value</span><span class="err">&quot;</span><span class="p">,</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="nl">type</span><span class="p">:</span><span class="w"> </span><span class="n">STRING</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="p">}</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="err">]</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="err">})</span>
 </span></code></pre></div>
 <p>このフラグメントは、システムが現在サポートしている両方のタイプの引数を示しています。
-最初の<code>ENV_VAR_NAME_SOURCE</code>は<code>ENVIRONMENT_SOURCE_NAME</code>タイプの例で、これはUIのユーザーにプロジェクト内の異なる環境のドロップダウンを提示します。もし私たちが許可したくない場合は、 呼び出し環境で実行するタスク(例えば、他の環境からデータベースをインポートしたい場合など)については、<code>ENVIRONMENT_SOURCE_NAME_EXCLUDE_SELF</code>を使用して環境リストを制限することができます。
+最初の<code>ENV_VAR_NAME_SOURCE</code>は<code>ENVIRONMENT_SOURCE_NAME</code>タイプの例で、UIのユーザーにプロジェクト内の異なる環境のドロップダウンを提示します。タスクが起動した環境で実行されるのを許可したくない場合(例えば、他の環境からデータベースをインポートしたい場合など)は<code>ENVIRONMENT_SOURCE_NAME_EXCLUDE_SELF</code>を使用して環境リストを制限することができます。
 二つ目の<code>ENV_VAR_NAME_STRING</code>は<code>STRING</code>型で、ユーザーにテキストボックスを記入するように促します。</p>
 <p>ユーザーが選択した値は、タスクが実行されたときに<code>COMMAND</code>型のタスクで環境変数として利用可能になります。</p>
 <p><img alt="タスク引数" src="../../images/custom-task-arguments.png" /></p>
 <h3 id="_8">システム全体のタスク<a class="headerlink" href="#_8" title="Permanent link">#</a></h3>
-<p>プラットフォームの管理者は、システム全体のタスクを登録することができます。これらのタスクはすべての環境で表示され、ユーザーがそれらを呼び出す権限によって制限されます。</p>
+<p>システム全体のタスクを登録できるのはLagoonの管理者のみです。これらのタスクはすべての環境で表示され、ユーザーが持つ権限によって制限されます。</p>
 <p>システム全体のタスクを作成する方法は、他のタスクタイプとほぼ同じですが、2つの例外があります。</p>
 <p>まず、<code>addAdvancedTaskDefinition</code>ミューテーションの中で<code>systemWide: true</code>フィールドを設定します。</p>
-<p>次に、<code>groupName</code>、<code>project</code>、または<code>environment</code>を指定してい<em>ない</em>ことを確認します - これらのフィールドは特定のコンテキストをターゲットにするために使用されるため、これらを指定すると目的を逸脱することになります。</p>
+<p>次に、<code>groupName</code>、<code>project</code>、<code>environment</code>を指定していないことを確認します。これらのフィールドは特定のコンテキストをターゲットにするために使用されるため、指定すると目的を逸脱することになります。</p>
 <h3 id="_9">確認<a class="headerlink" href="#_9" title="Permanent link">#</a></h3>
-<p><code>confirmationText</code>フィールドにテキストがあると、ユーザーがタスクを実行できるようになる前に、UIに確認モーダルとともに表示されます。 <img alt="タスク確認" src="../../images/custom-task-confirm.png" /></p>
+<p><code>confirmationText</code>フィールドにテキストがあると、ユーザーがタスクを実行できるようになる前に、UIに確認モーダルが表示されます。 <img alt="タスク確認" src="../../images/custom-task-confirm.png" /></p>
 <h2 id="_10">タスクの呼び出し<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
 <p>タスクが定義されていると、タスクはLagoon UIのタスクドロップダウンに表示されるはずです。</p>
-<p>また、<code>invokeTask</code> ミューテーションを使用してGraphQL apiからも呼び出すことができます。</p>
+<p>また、<code>invokeTask</code> ミューテーションを使用してGraphQL apiからも呼び出すこともできます。</p>
 <div class="language-graphql highlight"><span class="filename">タスクの呼び出し</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">mutation</span><span class="w"> </span><span class="nf">invokeTask</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="n">invokeRegisteredTask</span><span class="p">(</span><span class="n">advancedTaskDefinition</span><span class="p">:</span><span class="w"> </span><span class="no">int</span><span class="p">,</span><span class="w"> </span><span class="n">environment</span><span class="p">:</span><span class="w"> </span><span class="no">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">status</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><code>invokeTask</code>は常に_特定の環境_でタスクを呼び出すことに注意してください。</p>
+<p><code>invokeTask</code>は常に特定の環境でタスクを呼び出すことに注意してください。</p>
 <h2 id="_11">例<a class="headerlink" href="#_11" title="Permanent link">#</a></h2>
 <p>では、<code>yarn audit</code>の例を設定してみましょう。</p>
 <div class="language-graphql highlight"><span class="filename">タスク定義ミューテーション</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">mutation</span><span class="w"> </span><span class="nf">runYarnAudit</span><span class="w"> </span><span class="p">{</span>
@@ -4862,8 +4862,8 @@
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>これにより、私たちのプロジェクト(42)のタスクが定義されます。これを実行すると、タスク定義のIDが返されます(たとえば、<code>9</code>とします)</p>
-<p>このタスクは、<code>DEVELOPER</code>または<code>MAINTAINER</code>の役割を持つ誰でもUIから実行できるようになります。</p>
+<p>これにより、私たちのプロジェクト(42)のタスクが定義されます。これを実行すると、タスク定義のIDが返されます(例えば、<code>9</code>とします)</p>
+<p>このタスクは、<code>DEVELOPER</code>または<code>MAINTAINER</code>の役割を持つユーザーがUIから実行できるようになります。</p>
 <p><img alt="タスクリスト" src="../../images/task-yarn-audit.png" /></p>
 
 
