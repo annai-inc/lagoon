@@ -31,7 +31,7 @@ nav:
   - Workflows: concepts-advanced/workflows.md
   - Feature Flags: concepts-advanced/feature-flags.md
 - Lagoonizing:
-    - Lagoonizing Your Exisiting Site: lagoonizing/index.md
+    - Lagoonizing Your Existing Site: lagoonizing/index.md
     - Docker Images:
       - Commons: docker-images/commons.md
       - MariaDB: docker-images/mariadb.md
@@ -281,7 +281,7 @@ plugins:
             Workflows: ワークフロー
             Feature Flags: フィーチャーフラグ
             Lagoonizing: Lagoonizing
-            Lagoonizing Your Existing Site: 既存サイトのLagoonizing
+            Lagoonizing Your Existing Site: 既存のサイトをLagoonizingする
             Docker Images: Dockerイメージ
             Configuring Applications: アプリケーションの設定
             Options: オプション

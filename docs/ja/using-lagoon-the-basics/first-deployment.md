@@ -29,7 +29,7 @@ git push
 
 すべて正しければ設定されたチャットシステムの通知を見ることができます。(これは親切なLagoonの管理者が設定したものです)
 
-![Lagoonizedリポジトリにプッシュが行われたというSlackの通知](../images/first_deployment_slack_start.jpg)
+![Lagoonで動かすためのセットアップが行われたリポジトリにプッシュが行われたというSlackの通知](../images/first_deployment_slack_start.jpg)
 
 これは、Lagoonがあなたのコードのデプロイを開始したことを通知します。コードの大きさやコンテナの量によりますが、これには数秒かかります。リラックスしてください。今何が起こっているのか知りたい場合は、[Lagoonのビルドとデプロイプロセス](../concepts-basics/build-and-deploy-process.md)をチェックしてください。
 
